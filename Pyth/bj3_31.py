@@ -38,18 +38,3 @@ for i in range(T):
 ## 리스트 안에 술 소비량을 기준으로 튜플이 오름차순 정렬되어있음. 가장 마지막 요소(술 소비량이 가장 많은)의 첫번째 값은 학교이름
 ## sort : 리스트를 정렬. 기준이 되는 값을 지정하는 것이 'key' 매개변수
 ## lambda : 함수를 인자로 받는 함수나, 간단한 함수를 한 줄로 표현할 때 유용. 여기서는 정렬의 기준을 제공했음
-
-# 함수공부 (map)
-# map(function, iterable) : 함수는 주어진 iterable의 각 요소에 대해 function을 적용하고, 결과를 새로운 iterable로 반환
-# example)
-# 제곱 함수
-def square(x):
-    return x ** 2
-
-# 원본 리스트
-numbers = [1, 2, 3, 4, 5]
-
-# map 함수를 사용하여 각 요소에 제곱 함수를 적용
-squared_numbers = map(square, numbers) # 결과가 map 객체로 반환됨 / <map object at 0x00000>
-
-print(list(squared_numbers)) #list 씌워주기
