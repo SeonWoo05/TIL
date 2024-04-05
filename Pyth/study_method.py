@@ -62,3 +62,34 @@ numbers = [-2, -1, 0, 1, 2, 3, 4, 5]
 
 # 양수를 걸러냄
 positive_numbers = filter(lambda x: x > 0, numbers) #list가 아니라 filter 객체가 되었음
+
+
+### 함수공부 (lambda)
+# lambda arguments: expression : lambda를 사용하면 함수를 선언할 필요 없이 한 줄로 간단한 함수를 정의. 주로 함수를 간단하게 정의할 때 사용되며, 일반적으로 다른 함수의 인자로 전달되는 작은 함수들에 많이 사용.
+# lambda: 익명 함수를 선언하기 위한 키워드.
+# arguments: 함수의 매개변수(parameter)를 나타냅니다. 콜론(:)의 왼쪽에 위치.
+# expression: 함수의 반환값을 나타내는 표현식(expression). 콜론(:)의 오른쪽에 위치.
+
+add = lambda x, y: x + y
+result = add(3, 5) # 함수 호출
+print(result)  # 출력: 8
+
+
+### 함수공부 (split)
+# string.split(sep=None, maxsplit=-1) : 문자열을 특정 구분자(delimiter)를 기준으로 분리하는 파이썬의 문자열 메서드 
+# sep (선택 사항): 구분자(separator)로 사용할 문자열입니다. 기본값은 공백입니다. 이 구분자를 기준으로 문자열이 분리
+# maxsplit (선택 사항): 분리할 최대 횟수입니다. 기본값은 -1이며, 이는 제한이 없음을 의미합니다. 만약 이 값을 설정하면, 문자열이 최대 몇 번 분리될지를 결정
+
+text = "apple,banana,orange,grape"
+fruits = text.split(',') # 쉼표를 기준으로 문자열을 분리하여 리스트로 반환
+print(fruits)  # 출력: ['apple', 'banana', 'orange', 'grape']
+
+
+### 함수공부 (join)
+# separator.join(iterable) : 주로 리스트나 튜플과 같은 iterable 객체의 요소들을 하나의 문자열로 합치는 데 사용
+# separator: 각 요소를 이어붙일 때 사이에 삽입될 문자열.
+# iterable: 이어붙일 요소들을 포함하는 iterable 객체.
+
+words = ["apple", "banana", "orange", "grape"]
+text = ','.join(words) # 각 요소들을 쉼표로 구분하여 이어붙임
+print(text)  # 출력: "apple,banana,orange,grape"
