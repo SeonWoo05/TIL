@@ -57,12 +57,12 @@ print(numbers)
 
 ### 함수공부 (filter)
 # filter(function, iterable) : 함수는 주어진 iterable(반복 가능한) 자료형에서 특정 조건을 만족하는 요소들을 걸러내는 데 사용
-#
+
 numbers = [-2, -1, 0, 1, 2, 3, 4, 5]
 
 # 양수를 걸러냄
 positive_numbers = filter(lambda x: x > 0, numbers) #list가 아니라 filter 객체가 되었음
-
+# 반환 되는 객체가 filter라서 list(positvie_num) 이나 list(filter()) 등으로 변환 해주어야 함
 
 ### 함수공부 (lambda)
 # lambda arguments: expression : lambda를 사용하면 함수를 선언할 필요 없이 한 줄로 간단한 함수를 정의. 주로 함수를 간단하게 정의할 때 사용되며, 일반적으로 다른 함수의 인자로 전달되는 작은 함수들에 많이 사용.
