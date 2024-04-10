@@ -176,3 +176,14 @@ print(sliced_list3)  # 출력: [3, 4, 5]
 # 리스트의 모든 요소를 역순으로 선택
 sliced_list4 = my_list[::-1]
 print(sliced_list4)  # 출력: [5, 4, 3, 2, 1]
+
+
+### 함수공부 (index)
+# .index() : 리스트에서 특정 원소의 인덱스를 반환해주는 함수
+# 사용 방법
+#     ◻ array.index(x) 리스트에서 x의 인덱스 반환
+#     ◻ array.index(x, start) 리스트[start:]에서 x의 인덱스 반환
+#     ◻ array.index(x, start, stop) 리스트[start:stop]에서 x의 인덱스 반환
+#         (stop은 포함되지 않음. 즉 start부터 stop-1까지의 원소들만 포함)
+# ◼ 중복된 원소가 있으면 가장 작은 인덱스를 리턴
+# ◼ 문자열에서도 인덱스를 찾을 수 있음
