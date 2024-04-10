@@ -124,7 +124,7 @@
 # for i in range(1,10):
 #     print(N, '*', i, '=', N*i)
 
-# # 006. 설탕배달
+# ########### 006. 설탕배달
 # N = int(input())
 # if N <= 7:
 # 	if N == 3 or N == 5:
@@ -162,7 +162,7 @@
 # else:
 #     print(-1)
 
-# # 007. OX 퀴즈
+# ########## 007. OX 퀴즈
 # T = int(input())
 
 # for i in range(T):
