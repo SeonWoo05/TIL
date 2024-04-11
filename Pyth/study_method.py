@@ -93,7 +93,8 @@ print(fruits)  # 출력: ['apple', 'banana', 'orange', 'grape']
 words = ["apple", "banana", "orange", "grape"]
 text = ','.join(words) # 각 요소들을 쉼표로 구분하여 이어붙임
 print(text)  # 출력: "apple,banana,orange,grape"
-
+text = ''.join(words) # 각 요소들을 이어붙임
+print(text)  # 출력: "applebananaorangegrape"
 
 ### 함수공부 (count)
 # .count(value) : 주어진 값이 리스트나 문자열 등의 반복 가능한 객체 안에 몇 번 등장하는지를 세는 내장 함수
@@ -126,7 +127,7 @@ print(my_list)  # 출력: [1, 4, 2, 3]
 my_list = [1, 2, 3]
 new_elements = [4, 5]
 
-my_list.extend(new_elements # 리스트의 끝에 iterable 객체인 new_elements의 모든 요소를 추가)
+my_list.extend(new_elements) # 리스트의 끝에 iterable 객체인 new_elements의 모든 요소를 추가)
 print(my_list)  # 출력: [1, 2, 3, 4, 5]
 
 
