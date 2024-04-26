@@ -118,3 +118,18 @@ print(pi)
 #         (stop은 포함되지 않음. 즉 start부터 stop-1까지의 원소들만 포함)
 # ◼ 중복된 원소가 있으면 가장 작은 인덱스를 리턴
 # ◼ 문자열에서도 인덱스를 찾을 수 있음
+
+
+### 함수공부 (enumerate)
+# enumerate(iterable, start=0) : 순회 가능한(iterable) 객체를 입력으로 받아 각 요소의 인덱스와 값을 포함하는 enumerate 객체를 반환
+# start: 인덱스의 시작 값을 지정. 기본값은 0입니다.
+# enumerate() 함수는 보통 for 루프와 함께 사용되며, 각 요소의 인덱스와 값을 함께 사용해야 할 때 유용
+my_list = ['apple', 'banana', 'orange']
+
+for i, value in enumerate(my_list):
+    print(i,value)
+
+# 출력: 0 apple
+#       1 banana
+#       2 orange
+# 인덱스를 순회하면서 출력. 요소와 인덱스를 동시에 얻을 수 있다.
