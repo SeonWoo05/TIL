@@ -1,0 +1,66 @@
+주성분1 : 1인 가구수 / 1인가구 여성인구 +
+주성분2 : 인구수 / 여성인구수 +
+주성분3 : 경찰서 / 치안시설분포 -     경찰관서 접근 취약인구수 +
+주성분4 : cctv 개수 +
+주성분5 : 버스 지하철 +
+주성분6 : 여성 길단위 상존인구 / 여성 건물단위 상존인구 -
+
+주성분 1: t-statistic = 5.76, p-value = 0.0001
+주성분 2: t-statistic = -1.59, p-value = 0.1358
+주성분 3: t-statistic = -0.34, p-value = 0.7378
+주성분 4: t-statistic = 0.94, p-value = 0.3647
+주성분 5: t-statistic = 4.95, p-value = 0.0003
+주성분 6: t-statistic = -0.95, p-value = 0.3613
+
+t-statistic: 두 그룹 간의 평균 차이를 표준 오차로 나눈 값으로, 두 그룹의 평균이 통계적으로 유의미한 차이를 나타내는지를 측정합니다. 값이 양수인 경우에는 그룹 1의 평균이 그룹 2의 평균보다 높음을 나타내고, 음수인 경우에는 그 반대를 나타냅니다.
+p-value: 귀무가설이 참일 때 관측된 결과와 같거나 더 극단적인 결과를 얻을 확률을 의미합니다. 일반적으로 p-value가 유의수준(예: 0.05)보다 작으면 귀무가설을 기각하고 대립가설을 채택합니다. 따라서 p-value가 작을수록 두 그룹 간의 차이가 통계적으로 유의미하다고 판단할 수 있습니다.
+
+주성분 1: t-statistic = 9.79, p-value = 0.0002
+주성분 2: t-statistic = -2.35, p-value = 0.0655
+주성분 3: t-statistic = -1.79, p-value = 0.1334
+주성분 4: t-statistic = 0.57, p-value = 0.5949
+주성분 5: t-statistic = 3.59, p-value = 0.0157
+주성분 6: t-statistic = -0.62, p-value = 0.5611
+
+주성분 1: t-statistic = 5.56, p-value = 0.0008
+주성분 2: t-statistic = -1.37, p-value = 0.2135
+주성분 3: t-statistic = 1.11, p-value = 0.3039
+주성분 4: t-statistic = 1.21, p-value = 0.2665
+주성분 5: t-statistic = 6.16, p-value = 0.0005
+주성분 6: t-statistic = -1.21, p-value = 0.2651
+
+
+광장동: Levene's test - statistic = 0.98, p-value = 0.3463
+구의1동: Levene's test - statistic = 3.55, p-value = 0.0890
+구의2동: Levene's test - statistic = 2.44, p-value = 0.1495
+구의3동: Levene's test - statistic = 1.63, p-value = 0.2308
+군자동: Levene's test - statistic = 2.44, p-value = 0.1493
+능동: Levene's test - statistic = 0.17, p-value = 0.6862
+자양1동: Levene's test - statistic = 3.34, p-value = 0.0977
+자양2동: Levene's test - statistic = 2.50, p-value = 0.1448
+자양3동: Levene's test - statistic = 1.84, p-value = 0.2052
+자양4동: Levene's test - statistic = 4.09, p-value = 0.0708
+중곡1동: Levene's test - statistic = 1.00, p-value = 0.3416
+중곡2동: Levene's test - statistic = 3.14, p-value = 0.1068
+중곡3동: Levene's test - statistic = 2.49, p-value = 0.1453
+중곡4동: Levene's test - statistic = 0.65, p-value = 0.4379
+
+
+Cluster 0:
+광장동     0
+구의2동   2
+구의3동   3
+군자동     4
+자양2동   8
+중곡4동   14
+Cluster 1:
+구의1동   1
+능동       5
+자양1동   7
+자양3동   9
+자양4동   10
+중곡1동   11
+중곡2동   12
+중곡3동   13
+Cluster 2:
+화양동     6
