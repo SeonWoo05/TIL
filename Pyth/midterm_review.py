@@ -46,3 +46,45 @@ C = sorted(C)
 
 for i in C:
     print(i)
+
+
+# BJ 2576 (3번)
+A = []
+
+for i in range(7):
+    B = int(input())
+    A.append(B)
+
+C = []
+for i in A:
+    if i % 2 == 1:
+        C.append(i)
+
+if len(C) != 0:
+    print(sum(C))
+    print(min(C))
+
+else:
+    print(-1)
+
+
+# BJ 1302 (4번)
+N = int(input())
+sell = {} # 딕셔너리 이용하자
+
+for i in range(N):
+    name = input()
+    if name not in sell:
+        sell[name] = 1
+    else:
+        sell[name] += 1
+
+max_value = max(sell.values())
+
+best = []
+for key, value in sell.items(): #.items 를 이용해서 key 값과 value 동시에 이용
+    if value == max_value:
+        best.append(key) 
+
+best = sorted(best)
+print(best[0])
