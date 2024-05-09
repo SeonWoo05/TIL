@@ -133,3 +133,30 @@ for i, value in enumerate(my_list):
 #       1 banana
 #       2 orange
 # 인덱스를 순회하면서 출력. 요소와 인덱스를 동시에 얻을 수 있다.
+
+
+### 함수공부 (strip)
+# .strip() : 문자열에서 양쪽 끝에 있는 공백이나 특정 문자를 제거
+# input().strip() : 입력값의 양쪽 끝에 있는 공백을 제거한 후 변수에 할당
+
+# 양쪽 끝에 있는 공백을 제거
+text = "  Hello, world!  "
+stripped_text = text.strip()
+print(stripped_text)  # 출력: "Hello, world!"
+
+# 특정 문자('!')를 제거
+text = "!!Hello, world!!!"
+stripped_text = text.strip('!')
+print(stripped_text)  # 출력: "Hello, world"
+
+
+### String formatting    f'{A:.2f}'
+# f-string : 문자열 앞에 접두사인 f를 붙이고, 중괄호 {} 안에 변수를 넣어서 포맷팅
+name = 'Dave'
+age = 27
+str = f'{age:03d}세 {name} 입니다.'
+print(str) # 27세 Dave 입니다.
+
+# 여기에 {age:.2f} {age:02d} 등 적용 가능
+# .3f : 소수점 자릿수 정해줌
+# 03d : 최소 자릿수를 세자리로, 남은 자리는 0으로 채움
