@@ -1,0 +1,41 @@
+<!-- <head>
+    <script>
+        function test() {
+            let ret = prompt('입력하세요.');
+            /*alert(ret);
+            document.write(ret);*/
+            console.log(ret); 
+        }
+
+    </script>
+</head>
+<body>
+    <img src="PNU_img.jpg" width="200" onmouseover="test()"></img>  마우스를 올릴 때 마다 동작 (html의 주석문 처리방법)
+</body> -->
+
+<head>
+    <script>
+        function gugudan(n) {
+            let m = parseInt(n); /* 정수이면 정수값 뽑기 */
+            if(isNaN(m) || m<1 || m>9 ) {
+                alert('입력오류');
+                return;
+            }
+
+            for(let i=1; i<=9; i++) {
+                document.write(m + ' x ' + i + ' = ' + m*i + '<br>')
+            }
+            /* console.log(m); 이게 뭐지 prompt alert eval 등 실습에서는 이정도만 낼거임*/
+        }
+
+    </script>
+</head>
+
+<body>
+    <h3>구구단 출력 함수 만들기</h3>
+    <hr>
+    <script>
+        let a = prompt('출력할 구구단 단수를 입력하세요.');
+        gugudan(a);
+    </script>
+</body>
