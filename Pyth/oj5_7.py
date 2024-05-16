@@ -91,6 +91,7 @@ def print_time(sec):
     M = sec // 60
     sec %= 60
     print("{0:02d}:{1:02d}:{2:02d}".format(H, M, sec))
+    # print(f'{H:02d}:{M:02d}:{sec:02d}')
 
 # 함수 정의는 다 건너띄고 이쪽 먼저 옴.
 cu = input().strip()
