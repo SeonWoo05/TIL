@@ -1,0 +1,39 @@
+<!-- <head>  18P 예제 
+</head>
+
+<body>
+    <p id="first"
+        style="background-color: yellow;"
+        onclick="this.style.color='teal'">
+            이것은 <span style="color:red;">문장</span>입니다.
+    </p>
+    <script>
+        let pobj = document.getElementById('first'); //위 <p>의 DOM object를 가져와서 pobj에 넣겠다
+        // 위에 왜 p태그 안뜨지
+        document.write(pobj.id + '<br>');
+        document.write(pobj.tagname + '<br>');
+        document.write(pobj.innerHTML + '<br>');
+        document.write(pobj.style + '<br>');
+        document.write(pobj.onclick + '<br>');
+
+        pobj.innerHTML = '안녕하세요?';
+    </script>
+</body> -->
+
+<head>
+    <script>
+        function change(obj, size, color) {
+            //let ddd = document.getElementById('d');
+            //ddd.style ~ 이것도 이해하기
+            obj.style.fontSize = size;
+            obj.style.color = color;
+            // ??
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="change(this, '30px', 'blue')">버튼1</button> <!-- this는 이 버튼에 대응되는 객체?? --> 
+    <button onclick="change(this, '20px', 'red')">버튼2</button>
+    <div onclick="change(this, '40px', 'green')">여기를 클릭하세요.</div>
+</body> <!-- this 용법 익히기-->
