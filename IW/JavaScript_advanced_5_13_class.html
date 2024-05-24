@@ -1,7 +1,7 @@
-<!--
+<!-- 
 <head>
     <script>
-        let student1 = { /** 객체 **/
+        let student1 = { // 객체
             name : "Tom",
             stuno : "2024001",
             eng : 80,
@@ -21,6 +21,7 @@
 <body>
 </body>
 -->
+
 
 <head>
     <script>
@@ -47,12 +48,6 @@
             return this.balance;
         };
 
-        /**
-        function inquiry() {
-            return 10000;
-        } # 방식차이
-        **/
-
         account.deposit = function(value) {
             this.balance -= value;
         }
@@ -70,16 +65,3 @@
 
 <body>
 </body>
-
-<!--
-객체 정의 
-<head>
-    <script>
-        let account1 = {}
-        account1.nave = "홍길동";
-        account1.code = "111-222";
-        account1.balance = 10000;
-
-        let account2 = {}
-    귀찮음 =======>>>>>>>>>>> class 이용하면 될듯?
--->
