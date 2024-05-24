@@ -33,3 +33,7 @@ class Person:
 p1 = Person(175)
 p2 = Person(180)
 print(p1 < p2)
+
+
+# P.7
+class 
