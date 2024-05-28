@@ -36,7 +36,7 @@ class ShoppingCart:
     cart = []
 
     def __str__(self):
-        print("Current Items in cart:")
+        print("Current Items in Cart:")
         for item in ShoppingCart.cart:
             print(f"{item[0]} - {item[1]}")
         print(f"Total Quantity: {self.calculate_total()}")
