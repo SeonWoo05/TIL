@@ -5,20 +5,24 @@
     <title>lab</title>
     <script>
         let w;
+        let closeTimer;
 
         function openLab1() {
+            if (w) w.close();
             w = window.open('lab1_child.html', 'myWin', 'width=700,height=600,left=600,top=600');
-            setTimeout(() => { if (w) w.close(); }, 10000);
+            resetCloseTimer();
         }
 
         function openPNU() {
+            if (w) w.close();
             w = window.open('https://www.pusan.ac.kr', 'myWin', 'width=700,height=600,left=600,top=600');
-            setTimeout(() => { if (w) w.close(); }, 10000);
+            resetCloseTimer();
         }
 
         function openCSE() {
+            if (w) w.close();
             w = window.open('https://cse.pusan.ac.kr', 'myWin', 'width=700,height=600,left=600,top=600');
-            setTimeout(() => { if (w) w.close(); }, 10000);
+            resetCloseTimer();
         }
 
         function closeCurrentWindow() {
@@ -27,6 +31,15 @@
 
         function closeNewWindow() {
             if (w) w.close();
+        }
+
+        function resetCloseTimer() {
+            if (closeTimer) {
+                clearTimeout(closeTimer);
+            }
+            closeTimer = setTimeout(() => {
+                if (w) w.close();
+            }, 10000);
         }
     </script>
 </head>

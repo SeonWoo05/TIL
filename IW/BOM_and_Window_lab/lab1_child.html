@@ -66,6 +66,7 @@
 
     <script>
         let scrollInterval;
+        let hoverCloseTimer;
 
         function scrollDown() {
             if (scrollInterval) {
@@ -84,18 +85,16 @@
             window.resizeTo(newWidth, newHeight);
         }
 
-        let closeTimer;
-
         const bottomImage = document.getElementById('bottomImage');
 
         bottomImage.addEventListener('mouseover', () => {
-            closeTimer = setTimeout(() => {
+            hoverCloseTimer = setTimeout(() => {
                 window.close();
             }, 2000);
         });
 
         bottomImage.addEventListener('mouseout', () => {
-            clearTimeout(closeTimer);
+            clearTimeout(hoverCloseTimer);
         });
     </script>
 </body>
