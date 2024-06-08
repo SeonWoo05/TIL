@@ -55,3 +55,32 @@ else:
 
 
 # Add Strings
+def addStrings(num1, num2):
+    # 문자열을 뒤집어서 덧셈을 쉽게 만듭니다
+    num1, num2 = num1[::-1], num2[::-1]
+    
+    carry = 0
+    result = []
+    
+    # 각 자리를 더합니다
+    for i in range(max(len(num1), len(num2))):
+        digit1 = int(num1[i]) if i < len(num1) else 0
+        digit2 = int(num2[i]) if i < len(num2) else 0
+        
+        # 자릿수와 캐리를 더합니다
+        total = digit1 + digit2 + carry
+        
+        # 새로운 자릿수와 새로운 캐리를 계산합니다
+        result.append(total % 10)
+        carry = total // 10
+    
+    # 남은 캐리가 있으면 추가합니다
+    if carry:
+        result.append(carry)
+    
+    # 결과를 뒤집어서 최종 합계 문자열을 만듭니다
+    return ''.join(map(str, result[::-1]))
+
+a = input()
+b = input()
+print(addStrings(a,b))
