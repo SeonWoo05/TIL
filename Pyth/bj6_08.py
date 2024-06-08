@@ -44,3 +44,12 @@ def factorial(n):
 A = int(input())
 factorial(A)
 
+
+def factorial(n):
+    B = 1
+    if n == 1:
+        print(1)
+        break # break는 반복문만 가능
+    # if문에서 함수 종료하고싶으면 return문 사용해야함!!!!!
+
+
