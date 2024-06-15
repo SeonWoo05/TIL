@@ -195,4 +195,23 @@ def find_sosu(a,b):
 
 a,b = map(int, input().split())
 for i in find_sosu(a,b):
-    print(i) 
+    print(i)
+
+
+# BJ 10799
+N = input()
+arr = []
+cnt = 0
+
+for i in range(len(N)):
+    if N[i] == "(":
+        arr.append(i)
+
+    else:
+        if N[i-1] == "(":
+            arr.pop()
+            cnt += len(arr)
+        else:
+            arr.pop()
+            cnt += 1
+print(cnt)
