@@ -9,8 +9,8 @@
         function events() {
             p = document.getElementById("img");
             m = document.getElementById("div");
-            p.addEventListener("mousedown", down);
-            p.addEventListener("mouseup", up);
+            p.addEventListener("mousedown", down); // 이벤트 리스너를 등록, 그 이벤트가 발생하면 다음 함수 호출.
+            p.addEventListener("mouseup", up); 
             p.addEventListener("mouseover", over);
             p.addEventListener("mouseout", out);
             p.addEventListener("wheel", wheel);
