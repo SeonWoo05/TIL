@@ -13,6 +13,7 @@ def removeDuplicates(nums):
     
     return k  # 중복이 제거된 후의 길이 반환
 
+
 # BJ 2003
 A, B = map(int, input().split())
 C = list(map(int, input().split()))
