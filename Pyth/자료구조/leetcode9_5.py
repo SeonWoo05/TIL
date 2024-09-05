@@ -27,7 +27,6 @@ class Solution(object):
 
         A = "".join(digits)
         A = int(A) + 1
-
         A = str(A)
         B = []
         for i in A:
