@@ -1,16 +1,16 @@
 // <Problem 1>
-
+/*
 #include <stdio.h>
 
 int main(void) {
     int a = 5;
     int b = 3;
 
-    printf("a - b = %d\n", a-b); // c는 줄바꿈 필수
+    printf("a - b = %d\n", a-b);
     printf("a / b = %f", (float)a/b);
 
     return 0;
-}
+}*/
 
 
 // <Problem 2>
@@ -45,41 +45,18 @@ int main(void) {
 
 
 // <Problem 3>
-/*
+
 #include <stdio.h>
 
 int main(void) {
-    float nC;
-    int nF;
+    int nC, nF;
 
     printf("Enter Fahrenheit temperature: ");
     scanf("%d", &nF);
 
-    nC = 5.0 / 9.0 * (nF - 32);
+    nC = (float)5/9 * (nF - 32);
 
-    printf("%d degrees Fahrenheit is %f degrees Celsius.\n", nF, nC);
+    printf("%d degrees Fahrenheit is %d degrees Celsius.\n", nF, nC);
 
-    return 0;
-}*/
-
-
-// <Problem 4>
-
-#include <stdio.h>
-
-int main() {
-    int principal, time;
-	float rate, interest=0.0;
-    
-    //printf("Enter the principal amount: ");
-    scanf("%d", &principal);
-    //printf("Enter the annual interest rate: ");
-    scanf("%f", &rate);
-    //printf("Enter the time period in years: ");
-    scanf("%d", &time);
-    
-    interest = principal * rate * time;
-    
-    printf("The simple interest is: %.2f\n", interest);
     return 0;
 }
