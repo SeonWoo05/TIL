@@ -139,39 +139,54 @@ int main(void) {
 // }
 
 
-// Greatest Common Divisor (최대공약수)
-// + GCD를 이용하여 LCM, isCoprime 구현
-#include <stdio.h>
-int GCD(int a, int b) {
-    int nd = a;
-    if (nd < b) nd = b;
-    for (; nd>=1; nd=nd-1)
-        if (a%nd == 0 && b%nd == 0) break;
-    return nd;
-}
+// // Greatest Common Divisor (최대공약수)
+// // + GCD를 이용하여 LCM, isCoprime 구현
+// #include <stdio.h>
+// int GCD(int a, int b) {
+//     int nd = a;
+//     if (nd < b) nd = b;
+//     for (; nd>=1; nd=nd-1)
+//         if (a%nd == 0 && b%nd == 0) break;
+//     return nd;
+// }
 
-int LCM(int a, int b) {
-    int nd = GCD(a,b);
-    return (a/nd) * (b/nd) * nd;
-}
+// int LCM(int a, int b) {
+//     int nd = GCD(a,b);
+//     return (a/nd) * (b/nd) * nd;
+// }
 
-int isCoprime(int a, int b) {
-    if (GCD(a,b) == 1) return 1;
-    else return 0;
-}
+// int isCoprime(int a, int b) {
+//     if (GCD(a,b) == 1) return 1;
+//     else return 0;
+// }
 
-int main(void) {
-    int a, b;
-    printf("Enter two positive integers\n");
-    scanf("%d%d", &a, &b);
-    printf("GCD of (%d,%d) is %d\n",
-           a, b, GCD(a, b));
-    printf("LCM of (%d,%d) is %d\n",
-           a, b, LCM(a, b));
-    printf("(%d,%d) isCoprime? %d\n",
-           a, b, isCoprime(a, b));
-    return 0;
-}
+// int main(void) {
+//     int a, b;
+//     printf("Enter two positive integers\n");
+//     scanf("%d%d", &a, &b);
+//     printf("GCD of (%d,%d) is %d\n",
+//            a, b, GCD(a, b));
+//     printf("LCM of (%d,%d) is %d\n",
+//            a, b, LCM(a, b));
+//     printf("(%d,%d) isCoprime? %d\n",
+//            a, b, isCoprime(a, b));
+//     return 0;
+// }
 
 
 // Euclidean Algorithm
+// 1. Recursive Function 형태로
+int GCD(int a, int b) {
+    if (b == 0) return a;
+    return GCD(b, a % b);
+}
+
+// 2. Non Recursive
+int GCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
