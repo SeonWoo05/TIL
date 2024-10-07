@@ -1,4 +1,3 @@
-/*
 // <Problem 1>
 #include <stdio.h>
 
@@ -191,7 +190,7 @@ int main() {
 
     return 0;
 }
-*/
+
 
 // <Problem 6>
 #include <stdio.h>
