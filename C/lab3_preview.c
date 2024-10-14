@@ -1,4 +1,3 @@
-/*
 // <Problem 1>
 // 함수형으로 변환하기
 
@@ -23,25 +22,18 @@ int main(void) {
 }
 
 
-// <problem 2>                      # 다시봐야함
+// <problem 2>
 #include <stdio.h> 
+
+#define GCD(a,b) euclid(a,b)
 
 int euclid(int a, int b) {
     while (b != 0) {
         int temp = b;
-        b = a % b;
+        b = a % b; // 여기에 a<b 인 경우 a와 b를 바꾸는 것 까지 포함되어있음!!
         a = temp;
     }
     return a;
-}
-
-//#define GCD(a,b)	euclidr(a,b)
-#define GCD(a,b) euclid(a,b)
-
-int euclidr(int a, int b) {
-	if (b > a) return euclidr(b, a);
-	if (b == 0) return a;
-	return euclidr(b, a % b);
 }
 
 int LCM(int a,int b) {
@@ -143,22 +135,47 @@ int is_optimized_prime(int n)
 
     return 1;
 }
-*/
+
+// int is_optimized_prime(int n)
+// {
+//     if (n <= 1) return 0;
+    
+//     if (n == 2 || n == 5) return 1;
+
+//     if (n % 2 == 0 || n % 5 == 0) return 0;
+
+//     int sum = 0;
+//     int tmp = n;
+
+//     while (tmp > 0) {
+//         sum += tmp % 10;
+//         tmp = tmp / 10;
+//     }
+
+//     if (n != 3 && sum % 3 == 0) return 0;
+
+//     for (int i=3; i*i<=n; i+=2) {
+//         if (n % i == 0) return 0;
+//     }
+
+//     return 1;
+// }
+
 
 // <problem 5>
 #include <stdio.h> 
 
-void hanoi_tower(int n, int ox, int tx, int mx) {
+void hanoi_tower(int n, int ox, int tx, int mx) { // 4개 인자
 	if (n < 1) {
-		printf("Error: n >= 1\n");
+		printf("Error: n >= 1\n"); // 이동시킬 원반 => 1보다 크거나 같아야 됨
 	}
 	else if (n == 1) {
-		printf("%d -> %d\n", ox, tx);
+		printf("%d -> %d\n", ox, tx); // n = 1까지 재귀로 호출해서 1개씩 이동시키는거 출력할거임
 	}
 	else {
-		hanoi_tower(n-1,ox,mx,tx);
-        printf("%d -> %d\n", ox, tx);
-        hanoi_tower(n-1,mx,tx,ox);
+		hanoi_tower(n-1,ox,mx,tx); // n-1개를 나머지 막대에 옮기고
+        printf("%d -> %d\n", ox, tx); // 마지막 원반을 목적하는 막대에 옮기고
+        hanoi_tower(n-1,mx,tx,ox); // 나머지 막대에 있던 n-1개를 다시 목적하는 막대로
 	}
 }
 
