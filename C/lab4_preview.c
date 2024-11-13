@@ -1,4 +1,3 @@
-
 // Problem 1
 #include <stdio.h> 
 #include <stdlib.h> 
@@ -17,8 +16,8 @@ int generate_a_digit(void) {
 * @return : return an integer with 3 different digits in 0~9
 * @param : none
 */
-int generate_target_number_approach2(void) {
-	int first, second, third; // 이부분이 문제임
+int generate_target_number_approach2(void) { // 이부분이 문제임
+	int first, second, third;
 
     // 첫 번째 숫자를 랜덤하게 생성
     first = generate_a_digit();
@@ -27,7 +26,6 @@ int generate_target_number_approach2(void) {
     do {
         second = generate_a_digit();
     } while (second == first);
-
     // 세 번째 숫자를 생성 (첫 번째, 두 번째와 다를 때까지 반복)
     do {
         third = generate_a_digit();
@@ -46,7 +44,7 @@ int generate_target_number_approach2(void) {
 * @param	 : 	target - 3-digits target integer
 			guessed - 3-digits guessed integer
 */
-int get_match_result(int target, int guessed) {
+int get_match_result(int target, int guessed) { // 이부분이 문제
 	int n_strike=0, n_ball=0;
 	
     int target_digits[3] = {target / 100, (target / 10) % 10, target % 10};
@@ -242,13 +240,13 @@ void performRadiation(int dose) { // 방사선 투여
 void safeRadiation(int dose) { // 치료모도 + 방사선 용량 확인
     // 치료 모드인지 확인
     if (isCalibrationMode) {
-        printf("Error: Machine is in calibration mode. Radiation not performed.\n");
+        printf("에러 출력케이스 주어짐\n");
         return;
     }
 
     // 방사선 용량이 안전한 범위인지 확인
     if (dose < 1 || dose > 10) {
-        printf("Error: Dose %d is out of safe range (1-10). Radiation not performed.\n", dose);
+        printf("에러 출력케이스 주어짐\n");
         return;
     }
 
@@ -292,15 +290,15 @@ int d(int n) {
 }
 
 int main(void) {
-	int A[MAX_NUMBER+1] = {0};
+	int A[MAX_NUMBER] = {0};
 
-	for (int i=1; i<=MAX_NUMBER; i++) {
-		if (d(i) <= MAX_NUMBER){
+	for (int i=1; i<MAX_NUMBER; i++) {
+		if (d(i) < MAX_NUMBER){
 			A[d(i)] = 1;
 		}
 	}
 
-	for (int i=1; i<=MAX_NUMBER; i++) {
+	for (int i=1; i<MAX_NUMBER; i++) {
 		if (A[i] == 0) {
 			printf("%d\n", i);
 		}
