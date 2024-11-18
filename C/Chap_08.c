@@ -189,15 +189,22 @@
 #include <stdio.h>
 #include <string.h>
 
-int ispalindrome(char *str)
-{
-    int len = strlen(str);
-    for (int i = 0; i < len / 2; i++) {
-        if (str[i] != str[len - i - 1]) {
-            return 0; // Not a palindrome
+int ispalindrome(char *str) {
+    int left = 0, right = strlen(str) - 1;
+    
+    while (left < right) {
+        while (left < right && !isalnum(str[left])) left++;
+        while (left < right && !isalnum(str[right])) right--;
+
+        if (tolower(str[left]) != tolower(str[right])) {
+            return 0;
         }
+
+        left++;
+        right--;
     }
-    return 1; // Is a palindrome
+
+    return 1;
 }
 
 int main(void)
