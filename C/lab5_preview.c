@@ -133,77 +133,121 @@
 // 	return 0;
 // }
 
-
-// Problem 4
 #include <stdio.h>
 
-int is_delim(char ch, char *delim) {
-    while (*delim != '\0') {
-        if (ch == *delim) {
-            return 1;  // 구분자라면 1 반환
+char * mystrtok(char *str, char delim) {
+    static char *psave = 0;
+    char *pstr = 0;
+
+    if (str) psave = str;
+
+    if (psave) {
+        str = psave;
+        while (*str == delim) str++;
+        
+        if (*str) {
+            pstr = str; // 시작은 pstr
+
+            while (*str && *str != delim) str++; // 끝은 str
+        
+            if (*str) {
+                psave = str + 1; // 정적변수인 psave에 구분자 다음으로 pointer 옮겨두고
+                *str = 0; // 구분자를 NULL로 만듦
+            }
+
+            else {
+                psave = 0;
+            }
+
+            return pstr;
         }
-        delim++;
     }
-    return 0;  // 구분자가 아니면 0 반환
-}
-
-char *mystrtok(char *str, char *delim) {
-    static char *psave;  // 상태를 저장하는 정적 변수
-    char *start;         // 토큰의 시작 위치
-
-    // 첫 번째 호출이면 문자열의 시작을 저장
-    if (str != NULL) {
-        psave = str;
-    }
-
-    // 더 이상 처리할 문자열이 없으면 NULL 반환
-    if (psave == NULL) {
-        return NULL;
-    }
-
-    // // 구분자를 건너뛰고 토큰의 시작 위치 찾기
-    // while (*psave != '\0' && is_delim(*psave, delim)) {
-    //     psave++;
-    // }
-
-    // // 문자열의 끝에 도달하면 NULL 반환
-    // if (*psave == '\0') {
-    //     return NULL;
-    // }
-
-    // 토큰의 시작 위치 저장
-    start = psave;
-
-    // 구분자를 만날 때까지 이동
-    while (*psave != '\0' && !is_delim(*psave, delim)) {
-        psave++;
-    }
-
-    // 구분자를 만나면 종료 처리
-    if (*psave != '\0') {
-        *psave = '\0';  // 구분자를 '\0'으로 교체
-        psave++;        // 다음 위치로 이동
-    } else {
-        psave = NULL;   // 문자열 끝에 도달
-    }
-
-    return start;  // 현재 토큰 반환
 }
 
 int main(void) {
-    char str[] = "apple,orange;banana grape";
-    char delim[] = ",; ";
-    char *token;
+    char t[] = ", 123.4, he ll o, 12--,%^&*";
+    char *pstr = t; // 보내주는거
+    char *string; // 받아오는거
 
-    // mystrtok 호출 및 결과 출력
-    token = mystrtok(str, delim);
-    while (token) {
-        printf("%s\n", token);
-        token = mystrtok(NULL, delim);
+    string = mystrtok(pstr, ',');
+
+    while(string) {
+        printf("%s\n", string);
+        string = mystrtok(0, ',');
     }
 
     return 0;
 }
+// // Problem 4
+// #include <stdio.h>
+
+// int is_delim(char ch, char *delim) {
+//     while (*delim != '\0') {
+//         if (ch == *delim) {
+//             return 1;  // 구분자라면 1 반환
+//         }
+//         delim++;
+//     }
+//     return 0;  // 구분자가 아니면 0 반환
+// }
+
+// char *mystrtok(char *str, char *delim) {
+//     static char *psave;  // 상태를 저장하는 정적 변수
+//     char *start;         // 토큰의 시작 위치
+
+//     // 첫 번째 호출이면 문자열의 시작을 저장
+//     if (str != NULL) {
+//         psave = str;
+//     }
+
+//     // 더 이상 처리할 문자열이 없으면 NULL 반환
+//     if (psave == NULL) {
+//         return NULL;
+//     }
+
+//     // // 구분자를 건너뛰고 토큰의 시작 위치 찾기
+//     // while (*psave != '\0' && is_delim(*psave, delim)) {
+//     //     psave++;
+//     // }
+
+//     // // 문자열의 끝에 도달하면 NULL 반환
+//     // if (*psave == '\0') {
+//     //     return NULL;
+//     // }
+
+//     // 토큰의 시작 위치 저장
+//     start = psave;
+
+//     // 구분자를 만날 때까지 이동
+//     while (*psave != '\0' && !is_delim(*psave, delim)) {
+//         psave++;
+//     }
+
+//     // 구분자를 만나면 종료 처리
+//     if (*psave != '\0') {
+//         *psave = '\0';  // 구분자를 '\0'으로 교체
+//         psave++;        // 다음 위치로 이동
+//     } else {
+//         psave = NULL;   // 문자열 끝에 도달
+//     }
+
+//     return start;  // 현재 토큰 반환
+// }
+
+// int main(void) {
+//     char str[] = "apple,orange;banana grape";
+//     char delim[] = ",; ";
+//     char *token;
+
+//     // mystrtok 호출 및 결과 출력
+//     token = mystrtok(str, delim);
+//     while (token) {
+//         printf("%s\n", token);
+//         token = mystrtok(NULL, delim);
+//     }
+
+//     return 0;
+// }
 
 
 // // Problem 5
@@ -260,50 +304,3 @@ int main(void) {
 // }
 
 // // The main function is intentionally hidden.
-
-
-
-
-
-// // Problem 3
-// #include <stdio.h>
-
-// char *mystrtok1(char *str, char delim) {
-//     static char *psave = 0; 
-//     char *start;         
-
-//     if (str != NULL) psave = str;  
-
-//     if (psave == NULL) return NULL;
-
-//     start = psave;
-
-//     while (*psave != '\0' && *psave != delim) {
-//         psave++;
-//     }
-
-//     if (*psave == delim) {
-//         *psave = '\0'; 
-//         psave++;      
-//     } else {
-//         psave = NULL;   
-//     }
-    
-// 	return start; 
-// }
-
-// int main(void) {
-// 	char pstr[256] = { ",123,hello,34 56, Good.,Bye"};
-// 	char *ptoken;
-// 	char delim = ',';
-// 	int test = 0;
-
-// 	ptoken = mystrtok1(pstr, delim);
-	
-// 	while (ptoken) {
-// 		printf("%s\n",ptoken);
-// 		ptoken = mystrtok1(0, delim);		
-// 	}
-		
-// 	return 0;
-// }
