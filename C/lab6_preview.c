@@ -27,7 +27,7 @@ int get_kth_largest(int *nums, int k) {
 
     // 버블정렬
     for (int i = 0; i < count - 1; i++) {
-        for (int j = 0; j < count - i - 1; j++) { // 이미 큰것은 뒤로 갔음 -> 그 전까지만
+        for (int j = 0; j < count - i - 1; j++) { // 이미 큰것은 앞으로 갔음 -> 그 전까지만
             if (arr[j] < arr[j+1]) {
                 swap(&arr[j], &arr[j+1]);
             }
@@ -156,7 +156,7 @@ void stud_bubble_sort(STUD *pnucse) {
     STUD *last = stud_get_last(pnucse); // 배열의 끝 위치를 가져옴
 
     for (STUD *i = pnucse; i < last; i++) {
-        for (STUD *j = pnucse; j < last - 1; j++) {
+        for (STUD *j = pnucse; j < last - i ; j++) { // 만약 어느 중간부터 정렬하는거면 잘 조정하면됨 j < 부분
             // 점수(points)를 기준으로 비교하여 내림차순 정렬
             if (stud_compare_points(j, j + 1) < 0) { // j번째의 points 값이 작으면
                 stud_swap(j, j + 1);
