@@ -56,3 +56,49 @@
 
 # count_beautiful_seq(0)
 # print(ans)
+
+
+# https://www.codetree.ai/missions/2/problems/n-permutations-of-k-with-repetition-under-constraint?&utm_source=clipboard&utm_medium=text
+# 특정 조건에 맞게 k개 중에 1개를 n번 뽑기
+
+# k,n=map(int, input().split())
+
+# answer = [0 for i in range(n)]
+
+# def recur(depth):
+#     if depth >= 3 and answer[depth - 3] == answer[depth-2] == answer[depth-1]:
+#         return
+        
+#     if depth == n:
+#         print(*answer)
+#         return
+
+#     for i in range(k):
+#         answer[depth] = i+1
+#         recur(depth + 1)
+
+# recur(0)
+
+
+# https://www.codetree.ai/missions/2/problems/n-permutation?&utm_source=clipboard&utm_medium=text
+# 크기가 n인 순열
+# 각 숫자가 한번만 사용되어야함 => 방문처리 해서 사용되지 못하도록
+
+n = int(input())
+
+answer = [0 for i in range(n)]
+visited = [False for i in range(n + 1)] # index 그대로 이용하기 위해 n+1까지
+
+def recur(depth):
+    if depth == n:
+        print(*answer)
+        return
+
+    for i in range(1,n+1):
+        if visited[i] == False:
+            visited[i] = True
+            answer[depth] = i
+            recur(depth + 1)
+            visited[i] = False # 다 빠져나오면 방문처리 되돌리고 다음 인덱스로
+
+recur(0)

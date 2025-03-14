@@ -233,3 +233,33 @@ int main(void)
 //     }
 //     return 0;
 // }
+
+
+// <QUIZ8 6번>
+// 포인터의 증가 시점에서 발생하는 차이
+
+#include <stdio.h> 
+
+int foo1(char *pstr) {
+	char *pcur = pstr;
+	while (*pcur++)
+		;
+	return (pcur-pstr);
+}
+
+int foo2(char *pstr) {
+	char *pcur = pstr;
+	while (*pcur)
+		pcur++;
+	return (pcur-pstr);
+}
+
+int main(void) {
+	char str1[] = "12345678";
+	char str2[] = "1234";
+	
+	printf("foo1(str1) = %d, foo2(str1) = %d\n", foo1(str1), foo2(str1));
+	printf("foo1(str2) = %d, foo2(str2) = %d\n", foo1(str2), foo2(str2));
+	
+	return 0;	
+}

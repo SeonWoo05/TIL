@@ -65,13 +65,12 @@ void print_local_time_after_kdays(time_t t, int k) {
 
 // Problem 3. 구조체 bubble sort
 void stud_bubble_sort(STUD *pnucse) {
-    STUD *last = stud_get_last(pnucse); // 배열의 끝 위치를 가져옴
+    STUD *ps_cur = pnucse, *ps_end;
 
-    for (STUD *i = pnucse; i < last; i++) {
-        for (STUD *j = pnucse; j < last - i ; j++) { // 만약 어느 중간부터 정렬하는거면 잘 조정하면됨 j < 부분
-            // 점수(points)를 기준으로 비교하여 내림차순 정렬
-            if (stud_compare_points(j, j + 1) < 0) { // j번째의 points 값이 작으면
-                stud_swap(j, j + 1);
+    for (ps_end = stud_get_last(pnucse); ps_end > pnucse; ps_end--) {
+        for (ps_cur = pnucse; ps_cur < ps_end; ps_cur++) {
+            if (stud_compare_points(ps_cur, ps_cur + 1) < 0) {
+                stud_swap(ps_cur, ps_cur + 1);
             }
         }
     }
