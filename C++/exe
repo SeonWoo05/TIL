@@ -1,0 +1,2 @@
+cd "C:\Users\tjsdn\code\C++"
+gcc -o file file.cpp
