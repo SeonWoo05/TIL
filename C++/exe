@@ -1,2 +1,3 @@
-cd "C:\Users\tjsdn\GITHUB\TIL\C++"
-gcc -o file file.cpp
+cd "C:\Users\tjsdn\Git_hub\TIL\C++"
+gcc -o file file.c
+g++ -o file file.cpp
