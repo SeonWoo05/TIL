@@ -1,2 +1,2 @@
-cd "C:\Users\tjsdn\code\C++"
+cd "C:\Users\tjsdn\GITHUB\TIL\C++"
 gcc -o file file.cpp

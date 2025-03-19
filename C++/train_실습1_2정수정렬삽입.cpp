@@ -127,6 +127,5 @@ int main() {
         delete[] result; // 동적 할당 해제
     }
 
-    system("pause");
     return 0;
 }
