@@ -36,6 +36,39 @@ public:
         cout << "Parameterized Constructor 호출" << endl;
     }
 
+    // 복사 생성자 (Deep Copy)
+    Car(const Car& other) {
+        // 동적 메모리 할당 후 내용을 복사하여 각각의 객체가 독립적인 메모리를 갖도록 함
+        manufacturer = new char[strlen(other.manufacturer) + 1];
+        strcpy(manufacturer, other.manufacturer);
+
+        licensePlate = new char[strlen(other.licensePlate) + 1];
+        strcpy(licensePlate, other.licensePlate);
+
+        speed = other.speed;
+        ++count;
+        cout << "Copy Constructor 호출 (Deep Copy)" << endl;
+    }
+
+    // 대입 연산자 (Assignment Operator) - Deep Copy 구현
+    Car& operator=(const Car& other) {
+        
+        // 기존 동적 메모리 해제
+        delete[] manufacturer;
+        delete[] licensePlate;
+
+        // 새 메모리 할당 후 deep copy
+        manufacturer = new char[strlen(other.manufacturer) + 1];
+        strcpy(manufacturer, other.manufacturer);
+
+        licensePlate = new char[strlen(other.licensePlate) + 1];
+        strcpy(licensePlate, other.licensePlate);
+
+        speed = other.speed;
+        
+        return *this;
+    }
+
     // 소멸자 (Destructor)
     ~Car() {
         cout << "Destructor 호출: " << manufacturer << " (" << licensePlate << ")" << endl;
@@ -82,7 +115,6 @@ public:
     }
 };
 
-// static 변수 정의
 int Car::count = 0;
 
 // 제조사 기준 정렬 함수 (버블 정렬)
@@ -91,7 +123,7 @@ void sortByManufacturer(Car* arr, int size) {
         for (int j = 0; j < size - 1 - i; ++j) {
             // 문자열 비교는 strcmp 사용
             if (strcmp(arr[j].getManufacturer(), arr[j + 1].getManufacturer()) > 0) {
-                // swap: 임시 객체를 이용한 교환
+                // swap: 임시 객체를 이용한 교환 (대입 연산자와 복사 생성자가 deep copy 수행)
                 Car temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
