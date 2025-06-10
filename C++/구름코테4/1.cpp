@@ -175,7 +175,7 @@ public:
     void search(const string& name) {
         for (int i = 0; i < count; ++i) {
             if (beverages[i]->getName() == name) {
-                printByReference(*beverages[i]);
+                printByReference(*beverages[i]); // 역참조를 위해서 포인터를 넘긴게 아니라 객체를 넘김.
                 return;
             }
         }
